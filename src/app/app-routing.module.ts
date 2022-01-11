@@ -1,3 +1,4 @@
+import { SigninComponent } from './home/signin/signin.component';
 import { PhotoListResolver } from './photos/photo-list/photo-listresolver';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -8,6 +9,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 const routes: Routes = [
 
+  {path: '', component: SigninComponent},
   {path: 'user/:userName', component: PhotoListComponent, resolve: {
     photos: PhotoListResolver
   }},
