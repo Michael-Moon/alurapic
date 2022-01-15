@@ -1,9 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-load-button',
+  selector: 'ap-load-button',
   templateUrl: './load-button.component.html',
-  styleUrls: ['./load-button.component.scss']
+  styleUrls: ['./load-button.component.css']
 })
 export class LoadButtonComponent implements OnInit {
 
@@ -11,7 +11,7 @@ export class LoadButtonComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
