@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,35 +11,41 @@ import { AuthGuard } from './core/auth/auth.guard';
 import { SignUpComponent } from './home/singup/singup.component';
 
 const routes: Routes = [
-    { 
+    {
         path: '',
-        component: SignInComponent,
-        canActivate: [AuthGuard]
-    }, 
-    { 
-        path: 'signup',
-        component: SignUpComponent,
-    },         
-    { 
-        path: 'user/:userName', 
+        component: HomeComponent,
+        canActivate: [AuthGuard],
+        children: [
+          {
+            path: '',
+            component: SignInComponent,
+          },
+          {
+            path: 'signup',
+            component: SignUpComponent,
+          }
+        ]
+    },
+    {
+        path: 'user/:userName',
         component: PhotoListComponent,
         resolve: {
             photos: PhotoListResolver
         }
     },
-    { 
-        path: 'p/add', 
-        component: PhotoFormComponent 
+    {
+        path: 'p/add',
+        component: PhotoFormComponent
     },
-    { 
-        path: '**', 
-        component: NotFoundComponent 
-    }  
+    {
+        path: '**',
+        component: NotFoundComponent
+    }
 ];
 
 @NgModule({
-    imports: [ 
-        RouterModule.forRoot(routes) 
+    imports: [
+        RouterModule.forRoot(routes)
     ],
     exports: [ RouterModule ]
 })
