@@ -1,3 +1,4 @@
+import { UserNotTakenValidatorService } from './../singup/user-not-taken.validator.service';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../core/auth/auth.service';
