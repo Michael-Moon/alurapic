@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { UserService } from '../user/user.service';
 
-const API_URL = 'http://localhost:3000';
+import { environment } from './../../../environments/environment';
+
+const API = environment.ApiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +20,9 @@ export class AuthService {
 
     return this.http
       .post(
-        API_URL + '/user/login', 
-        { userName, password }, 
-        { observe: 'response'} 
+        API + '/user/login',
+        { userName, password },
+        { observe: 'response'}
       )
       .pipe(tap(res => {
         const authToken = res.headers.get('x-access-token');
