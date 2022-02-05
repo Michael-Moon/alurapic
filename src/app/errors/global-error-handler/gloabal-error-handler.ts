@@ -27,7 +27,7 @@ export class GlobalErrorHandler implements ErrorHandler {
             ? error.message :
             error.toString();
 
-        router.navigate(['/error']);
+        if(environment.production) router.navigate(['/error']);
 
         StackTrace
             .fromError(error)
