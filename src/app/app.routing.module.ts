@@ -1,3 +1,4 @@
+import { GlobalErrorComponent } from './errors/global-error/global-error.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -50,7 +51,14 @@ const routes: Routes = [
       data: {
         title: 'Not found'
       }
-   } ,
+    },
+    {
+      path: 'error',
+      component: GlobalErrorComponent,
+      data: {
+        title: 'error'
+      }
+    },
     {
         path: '**',
         component: NotFoundComponent

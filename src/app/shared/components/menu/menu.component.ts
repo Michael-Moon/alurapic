@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit{
 
-  isShow: boolean = false;
+  isShown: boolean = false;
 
   constructor() {}
 
@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit{
   }
 
   toggle(){
-     this.isShow = !this.isShow;
+     this.isShown = !this.isShown;
   }
 
 }

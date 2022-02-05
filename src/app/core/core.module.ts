@@ -1,3 +1,4 @@
+import { ShowIfLoggedModule } from './../shared/directives/show-if-logged/show-if-logged.module';
 
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
@@ -24,7 +25,8 @@ import { MenuModule } from './../shared/components/menu/menu.module';
         RouterModule,
         AlertModule,
         LoadingModule,
-        MenuModule
+        MenuModule,
+        ShowIfLoggedModule
     ],
     providers: [
         {
